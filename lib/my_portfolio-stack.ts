@@ -1,6 +1,7 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
+import * as cdk from "aws-cdk-lib";
+import { Construct } from "constructs";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as amplify from "aws-cdk-lib/aws-amplify";
 
 export class MyPortfolioStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -12,5 +13,8 @@ export class MyPortfolioStack extends cdk.Stack {
     // const queue = new sqs.Queue(this, 'MyPortfolioQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
+    const app = new amplify.CfnApp(this, "portfolio-site", {
+      name: "gs-portfolio",
+    });
   }
 }
