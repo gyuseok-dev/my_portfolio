@@ -1,14 +1,11 @@
-# Welcome to your CDK TypeScript project
+# CDK 배포하기
+1. aws config 설정
+2. cdk deploy
+3. 끝!
 
-This is a blank project for CDK development with TypeScript.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
-
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+# CloudFront 배포
+1. build 후 dist 폴더 생성
+2. 버킷으로 업로드 `aws s3 sync dist s3://portfolio-bucket-2023-03-25`
+3. https://d21n5hpr2g72s4.cloudfront.net/ 에 접속
+4. 끝!
