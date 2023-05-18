@@ -18,15 +18,19 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
+
+/* 항상 하단 가운데 고정 */
 header{
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
+  border: 1px solid var(--color-border);
+  width: 100%;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   line-height: 1.5;
-  max-height: 100vh;
+  max-height: 100vh; */
 }
 .logo {
   display: block;

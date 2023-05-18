@@ -122,17 +122,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border: 1px solid red;
     font-size: 18px;
     font-weight: bold;
 }
 
 .box {
+    border: 1px solid yellow;
     color: black;
     background-color: pink;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -142,12 +140,13 @@ export default {
     width: 200px;
     height: 200px;
     border: 1px solid gray;
-    border-radius: 100px;
+    border-radius: 50%;
     z-index: 0;
 }
 
 
 #box1 {
+    border: 1px solid blue;
     position: absolute;
     left: -300px;
     width: 150px;
@@ -155,6 +154,5 @@ export default {
     z-index: 1;
     cursor: pointer;
     transition: all 0.1s;
-
 }
 </style>

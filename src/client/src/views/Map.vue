@@ -22,6 +22,7 @@ import { defineComponent } from 'vue';
 import { GoogleMap, Marker, MarkerCluster, InfoWindow } from 'vue3-google-map'
 
 export default defineComponent({
+  // 마커 깔고 빠른 랜더링 보여주기
   components: { GoogleMap, Marker, MarkerCluster, InfoWindow },
   setup() {
     let center = { lat: 37.5290506, lng: 127.1172189 }
@@ -40,8 +41,7 @@ export default defineComponent({
 
 <style>
 .container {
-    left: 50;
+    left: 25%;
     width: 800px;
-    height: 100%;
 }
 </style>
