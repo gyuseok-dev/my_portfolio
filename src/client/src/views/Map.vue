@@ -39,7 +39,7 @@ export default defineComponent({
 })
 </script>
 
-<style>
+<style scoped>
 .container {
     left: 25%;
     width: 800px;

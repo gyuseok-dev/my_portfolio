@@ -24,7 +24,7 @@ header{
   position: fixed;
   top: 0;
   left: 0;
-  border: 1px solid var(--color-border);
+  /* border: 1px solid var(--color-border); */
   width: 100%;
   /* display: flex;
   justify-content: center;
