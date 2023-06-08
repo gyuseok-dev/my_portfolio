@@ -18,12 +18,13 @@
   </template>
 
 <script lang="ts">
+import TestComponentVue from '@/components/TestComponent.vue';
 import { defineComponent } from 'vue';
 import { GoogleMap, Marker, MarkerCluster, InfoWindow } from 'vue3-google-map'
 
 export default defineComponent({
   // 마커 깔고 빠른 랜더링 보여주기
-  components: { GoogleMap, Marker, MarkerCluster, InfoWindow },
+  components: { GoogleMap, Marker, MarkerCluster, InfoWindow, TestComponentVue },
   setup() {
     let center = { lat: 37.5290506, lng: 127.1172189 }
     window.navigator.geolocation.getCurrentPosition((position) => {
@@ -43,5 +44,6 @@ export default defineComponent({
 .container {
     left: 25%;
     width: 800px;
+    border: 1px solid red;
 }
 </style>
