@@ -35,6 +35,7 @@ export default defineComponent({
         { lat: 37.5290506, lng: 127.1172189 }
     ]
 
+
     return { center, locations }
   },
 })
