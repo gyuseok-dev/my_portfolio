@@ -15,6 +15,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/study/router'
+    },
+    { // todo: about, car 묶기 
+      path: '/study/router',
       name: 'home',
       component: HomeViewStudy.default
     },
