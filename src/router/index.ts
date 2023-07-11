@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 // import CounterView from '../views/study/CounterView.vue'
-import NoteView from '../views/study/NoteView.vue'
-import QuizView from '../views/study/QuizView.vue'
+import QuizMenuView from '@/views/study/quiz/MenuView.vue'
+import QuizView from '@/views/study/quiz/QuizView.vue'
 import * as HomeViewStudy from '../views/study/router/HomeView.vue'
 import AboutView from '@/views/study/router/AboutView.vue'
 import CarView from '@/views/study/router/CarView.vue'
@@ -15,7 +15,22 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/study/router'
+      redirect: '/study/quiz'
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      component: HomeView
+    },
+    {
+      path: '/study/quiz',
+      name: 'QuizMenu',
+      component: QuizMenuView
+    },
+    {
+      path: '/study/quiz/:id',
+      name: 'Quiz',
+      component: QuizView
     },
     { // todo: about, car 묶기 
       path: '/study/router',

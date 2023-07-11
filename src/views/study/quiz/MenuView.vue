@@ -1,7 +1,7 @@
-<script setup>
-import q from "../../data/quizes.json"
+<script setup lang="ts">
+import q from "@/data/quizes.json"
 import { ref, watch } from "vue"
-import Card from "../../components/study/Card.vue"
+import Card from "@/components/study/Card.vue"
 const quizes = ref(q)
 const search = ref("")
 watch(search, () => {
@@ -10,7 +10,7 @@ watch(search, () => {
 </script>
 
 <template>
-    <div class="container">
+    <div>
         <header>
             <h1>Quizes</h1>
             <input v-model="search" type="text" placeholder="Search...">
@@ -22,10 +22,6 @@ watch(search, () => {
 </template>
 
 <style scoped>
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
 
 header {
     margin-bottom: 10px;
