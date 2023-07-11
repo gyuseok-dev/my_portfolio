@@ -7,6 +7,7 @@ import * as HomeViewStudy from '../views/study/router/HomeView.vue'
 import AboutView from '@/views/study/router/AboutView.vue'
 import CarView from '@/views/study/router/CarView.vue'
 import ContactView from '@/views/study/router/ContactView.vue'
+import NotFoundView from '@/views/study/router/404View.vue'
 
 
 const router = createRouter({
@@ -50,6 +51,11 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       // component: () => import('../views/CanvasView.vue')
       component: () => import('../views/Map.vue')
+    },
+    {
+      path: '/:catchall(.*)*',
+      name: 'Not Found',
+      component: NotFoundView
     }
   ]
 })
