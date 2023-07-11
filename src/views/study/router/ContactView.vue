@@ -1,16 +1,14 @@
-
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import cars from '@/data/cars.json';
     const route = useRoute();
     const car = cars.find(car => car.id === Number(route.params.id));
 </script>
+
 <template>
     <div>
-        <h1> Car View </h1>
-        <p>{{ car?.name }}</p>
-        <p>{{ car?.year }}</p>
-        <p>{{ car?.price }}</p>
-        <RouterView />
+        <h1>Contact View</h1>
+        <p>{{ car?.contact.name }}</p>
+        <p>{{ car?.contact.phone }}</p>
     </div>
 </template>

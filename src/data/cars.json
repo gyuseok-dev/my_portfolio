@@ -3,30 +3,50 @@
         "id": 1,
         "name": "Chevy",
         "price": 15000,
-        "year": 2015
+        "year": 2015,
+        "contact": {
+            "name": "John Doe",
+            "phone": "123-456-7890"
+        }
     },
     {
         "id": 2,
         "name": "Ford",
         "price": 20000,
-        "year": 2017
+        "year": 2017,
+        "contact": {
+            "name": "Jane Doe",
+            "phone": "123-456-7890"
+        }
     },
     {
         "id": 3,
         "name": "Audi",
         "price": 30000,
-        "year": 2018
+        "year": 2018,
+        "contact": {
+            "name": "John Smith",
+            "phone": "123-456-7890"
+        }
     },
     {
         "id": 4,
         "name": "BMW",
         "price": 40000,
-        "year": 2019
+        "year": 2019,
+        "contact": {
+            "name": "Jane Smith",
+            "phone": "123-456-7890"
+        }
     },
     {
         "id": 5,
         "name": "Mercedes",
         "price": 50000,
-        "year": 2020
+        "year": 2020,
+        "contact": {
+            "name": "John Doe",
+            "phone": "123-456-7890"
+        }
     }
 ]

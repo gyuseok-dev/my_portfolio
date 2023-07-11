@@ -6,6 +6,7 @@ import QuizView from '../views/study/QuizView.vue'
 import * as HomeViewStudy from '../views/study/router/HomeView.vue'
 import AboutView from '@/views/study/router/AboutView.vue'
 import CarView from '@/views/study/router/CarView.vue'
+import ContactView from '@/views/study/router/ContactView.vue'
 
 
 const router = createRouter({
@@ -24,7 +25,13 @@ const router = createRouter({
     {
       path: '/study/router/cars/:id',
       name: 'cars',
-      component: CarView
+      component: CarView,
+      children: [
+        {
+          path: "contact",
+          component: ContactView
+        },
+      ],
     },
     {
       path: '/hole',
