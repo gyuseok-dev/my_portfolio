@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 // import CounterView from '../views/study/CounterView.vue'
 import NoteView from '../views/study/NoteView.vue'
 import QuizView from '../views/study/QuizView.vue'
+import * as HomeViewStudy from '../views/study/router/HomeView.vue'
+import AboutView from '@/views/study/router/AboutView.vue'
 
 
 const router = createRouter({
@@ -11,7 +13,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: QuizView
+      component: HomeViewStudy.default
+    },
+    {
+      path: '/study/router/about',
+      name: 'about',
+      component: AboutView
     },
     {
       path: '/hole',
