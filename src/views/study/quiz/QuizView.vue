@@ -5,7 +5,6 @@ import { useRoute } from "vue-router";
 import { ref, watch, computed } from "vue";
 import quizes from "@/data/quizes.json"
 const route = useRoute();
-console.log(route.params.id)
 const quizId = parseInt(route.params.id as string);
 const quiz = quizes.find((quiz) => quiz.id === quizId);
 const currentQuestionIndex = ref(0)
@@ -18,11 +17,14 @@ const currentQuestionIndex = ref(0)
 // })
 // this is simplified with computed()
 const questionStatus = computed(() => `${currentQuestionIndex.value}/${quiz!.questions.length}`)
-
+const barPercentage = computed(() => `${(currentQuestionIndex.value) / quiz!.questions.length * 100}%`)
 </script>
 <template>
     <div>
-        <QuizHeader :questionStatus="questionStatus" />
+        <QuizHeader 
+            :questionStatus="questionStatus"
+            :barPercentage="barPercentage"
+        />
         <div>
             <Question :question="quiz!.questions[currentQuestionIndex]" />
         </div>
