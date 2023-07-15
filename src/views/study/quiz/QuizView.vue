@@ -1,38 +1,30 @@
 <script setup lang="ts">
 import Question from "@/components/study/Question.vue"
+import QuizHeader from "@/components/study/QuizHeader.vue"
+import { useRoute } from "vue-router";
+import { ref, watch } from "vue";
+import quizes from "@/data/quizes.json"
+const route = useRoute();
+console.log(route.params.id)
+const quizId = parseInt(route.params.id as string);
+const quiz = quizes.find((quiz) => quiz.id === quizId);
+const currentQuestionIndex = ref(0)
+
+const questionStatus = ref(`${currentQuestionIndex.value}/${quiz!.questions.length}`)
+
+// IMPORTANT: watch() is a Vue 3 function, not a Vue 2 function
+watch(() => currentQuestionIndex.value, () => {
+    questionStatus.value = `${currentQuestionIndex.value + 1}/${quiz!.questions.length}`
+})
 </script>
 <template>
     <div>
-        <header>
-            <h4>Question 1/3</h4>
-            <div class="bar">
-                <div class="completion"></div>
-            </div>
-        </header>
+        <QuizHeader :questionStatus="questionStatus"/>
         <div>
-            <Question />
+            <Question :question="quiz!.questions[currentQuestionIndex]" />
         </div>
+        <button @click="currentQuestionIndex++">Next Question</button>
     </div>
 </template>
 
-<style scoped>
-header {
-    margin-top: 20px;
-}
-
-header h4 {
-    font-size: 30px;
-}
-
-.bar {
-    width: 300px;
-    height: 50px;
-    border: 1px solid bisque;
-}
-
-.completion {
-    width: 0;
-    height: 100%;
-    background-color: bisque;
-}
-</style>
+<style scoped></style>

@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router';
     </div>
 </template>
 
-<style scoped>
+<style scoped> 
     .active { /* active class for router-link */
         font-weight: 900;
         color: rgb(200, 135, 14);
